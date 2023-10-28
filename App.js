@@ -3,7 +3,7 @@ import "react-native-get-random-values";
 import { CONVEX_URL } from "@env";
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Tasks from "./Tasks";
+import Events from "./Events";
 const convex = new ConvexReactClient(CONVEX_URL, {
   unsavedChangesWarning: false,
 });
@@ -14,7 +14,7 @@ export default function App() {
       <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
       <ConvexProvider client={convex}>
-        <Tasks />
+        <Events />
       </ConvexProvider>
     </View>
   );
