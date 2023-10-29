@@ -5,7 +5,7 @@ import { useSignIn } from "@clerk/clerk-expo";
 export default function SignInScreen() {
   const { signIn, setActive, isLoaded } = useSignIn();
  
-  const [emailAddress, setEmailAddress] = React.useState("");
+  const [email, setEmailAddress] = React.useState("");
   const [password, setPassword] = React.useState("");
  
   const onSignInPress = async () => {
@@ -15,7 +15,7 @@ export default function SignInScreen() {
  
     try {
       const completeSignIn = await signIn.create({
-        identifier: emailAddress,
+        identifier: email,
         password,
       });
       // This is an important step,
@@ -30,7 +30,7 @@ export default function SignInScreen() {
       <View>
         <TextInput
           autoCapitalize="none"
-          value={emailAddress}
+          value={email}
           placeholder="Email..."
           onChangeText={(emailAddress) => setEmailAddress(emailAddress)}
         />
